@@ -31,9 +31,20 @@ const handler = (payload, res) => {
 
   let msg = _.defaults({
     channel: payload.channel_name,
-    attachments: attachments.push({
-      text: payload.text
-    })
+    attachments: [
+  {
+    title: 'One day you will be able to play a game of tictactoe',
+    color: '#2FA44F',
+    text: '`/tic newgame @username` challenges username to newgame \n`/tic show` shows the state of the game \n`/tic square 7` makes a move in square 7 (if it\'s your turn) \n`/tic quit` ends the game',
+    mrkdwn_in: ['text']
+  },
+  {
+    title: 'Tic Tac Toe Help',
+    color: '#777777',
+    text: '`/tic help` ... shows all available commands \n',
+    mrkdwn_in: ['text']
+  }
+]
   }, msgDefaults)
 
   res.set('content-type', 'application/json')
