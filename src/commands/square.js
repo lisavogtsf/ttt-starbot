@@ -27,7 +27,7 @@ let attachments = [
 
 const handler = (payload, res) => {
 
-  console.log("square needs to accept a payload, test for valid player, square then also run show? payload: ", payload);
+  console.log("square needs to accept a payload, test for valid player, square then also run show? \n payload: ", payload);
 
   let msg = _.defaults({
     channel: payload.channel_name,
