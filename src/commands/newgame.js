@@ -44,6 +44,8 @@ console.log("attachments", attachments);
     attachments: attachments
   }, msgDefaults)
 
+console.log("before sending msg", msg);
+
   res.set('content-type', 'application/json')
   res.status(200).json(msg)
   return
