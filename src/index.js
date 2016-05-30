@@ -35,8 +35,8 @@ app.post('/commands/tictactoe', (req, res) => {
     return
   }
 
-  let cmd = _.reduce(commands, (a, cmd) => {
-    return payload.text.match(cmd.pattern) ? cmd : a
+  let cmd = _.reduce(commands, (accumulator, command) => {
+    return payload.text.match(command.pattern) ? command : accumulator
   }, helpCommand)
 
   cmd.handler(payload, res)
