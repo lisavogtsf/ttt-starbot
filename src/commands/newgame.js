@@ -30,6 +30,8 @@ let attachments = [
   }
 ]
 
+console.log("attachments BEFORE shift", attachments);
+
 attachments.shift({
     title: 'ADDED VIA SHIFT',
     color: '#2FA44F',
@@ -37,7 +39,7 @@ attachments.shift({
     mrkdwn_in: ['text']
   });
 
-console.log("attachments", attachments);
+console.log("attachments after shift", attachments);
 
   let msg = _.defaults({
     channel: payload.channel_name,

@@ -39,7 +39,7 @@ let attachments = [
 const handler = (payload, res) => {
 
   // to have access to payload need to log here
-  console.log("I am in the show command, presumably I run logic here?", payload)
+  console.log("I am in the show command, presumably I run logic here? \n payload:", payload)
 // there will be a function here for going from the game state to creating
 // a string that can be displayed
 
