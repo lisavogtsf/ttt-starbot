@@ -5,10 +5,9 @@ const _ = require('lodash')
 const config = require('../config')
 
 const msgDefaults = {
-  response_type: 'in_channel'
-  // ,
-  // username: 'MyBot',
-  // icon_emoji: config('ICON_EMOJI')
+  response_type: 'in_channel',
+  username: 'TicTacToe',
+  icon_emoji: config('ICON_EMOJI')
 }
 
 let attachments = [
