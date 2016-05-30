@@ -4,8 +4,6 @@
 const _ = require('lodash')
 const config = require('../config')
 
-console.log("I am in the show command, presumably I run logic here?")
-
 const msgDefaults = {
   response_type: 'in_channel',
   username: 'TicTacToe',
@@ -15,7 +13,7 @@ const msgDefaults = {
 let attachments = [
   {
     title: 'One day you will be able to play a game of tictactoe',
-    color: '#2FA44F',
+      ,
     text: '`/tic show` shows the state of the game ❌ ⭕ ✖️ ',
     mrkdwn_in: ['text']
   },
@@ -40,6 +38,12 @@ let attachments = [
 ]
 
 const handler = (payload, res) => {
+
+  // to have access to payload need to log here
+  console.log("I am in the show command, presumably I run logic here?", payload)
+// there will be a function here for going from the game state to creating
+// a string that can be displayed
+
   let msg = _.defaults({
     channel: payload.channel_name,
     attachments: attachments

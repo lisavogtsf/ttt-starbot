@@ -26,6 +26,9 @@ let attachments = [
 ]
 
 const handler = (payload, res) => {
+
+	console.log("needs to accept payload with challenger name and validate that. payload:", payload);
+
   let msg = _.defaults({
     channel: payload.channel_name,
     attachments: attachments
