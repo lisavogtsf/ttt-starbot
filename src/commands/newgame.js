@@ -10,6 +10,17 @@ const msgDefaults = {
   icon_emoji: config('ICON_EMOJI')
 }
 
+const handler = (payload, res) => {
+
+	console.log("needs to accept payload with challenger name and validate that. payload:", payload);
+
+  // check if a game is already being played, create error message
+
+  // check if there is a valid username being challenged, are they in this same channel? create error message
+
+  // 
+
+
 let attachments = [
   {
     title: 'One day you will be able to play a game of tictactoe',
@@ -24,10 +35,6 @@ let attachments = [
     mrkdwn_in: ['text']
   }
 ]
-
-const handler = (payload, res) => {
-
-	console.log("needs to accept payload with challenger name and validate that. payload:", payload);
 
   let msg = _.defaults({
     channel: payload.channel_name,
