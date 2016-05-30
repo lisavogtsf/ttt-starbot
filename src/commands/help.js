@@ -6,21 +6,21 @@ const config = require('../config')
 
 const msgDefaults = {
   response_type: 'in_channel',
-  username: 'Starbot',
+  username: 'TicTacToe',
   icon_emoji: config('ICON_EMOJI')
 }
 
 let attachments = [
   {
-    title: 'Starbot will help you find the hippest repos on GitHub',
+    title: 'One day you will be able to play a game of tictactoe',
     color: '#2FA44F',
-    text: '`/starbot repos` returns hip repos \n`/starbot javascript` returns hip JavaScript repos',
+    text: '`/tic newgame @username` challenges username to newgame \n`/tic show` shows the state of the game \n`/tic square 7` makes a move in square 7 (if it\'s your turn) \n`/tic quit` ends the game',
     mrkdwn_in: ['text']
   },
   {
-    title: 'Configuring Starbot',
-    color: '#E3E4E6',
-    text: '`/starbot help` ... you\'re lookin at it! \n',
+    title: 'Tic Tac Toe Help',
+    color: '#777777',
+    text: '`/tic help` ... you\'re lookin at it! \n',
     mrkdwn_in: ['text']
   }
 ]
