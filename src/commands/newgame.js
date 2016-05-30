@@ -14,7 +14,7 @@ let attachments = [
   {
     title: 'One day you will be able to play a game of tictactoe',
     color: '#2FA44F',
-    text: '`/tic newgame @username` challenges username to newgame \n`/tic show` shows the state of the game \n`/tic square 7` makes a move in square 7 (if it\'s your turn) \n`/tic quit` ends the game',
+    text: '`/tic newgame @username` challenges username to newgame ',
     mrkdwn_in: ['text']
   },
   {
