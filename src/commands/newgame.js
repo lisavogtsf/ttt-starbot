@@ -22,22 +22,25 @@ const handler = (payload, res) => {
 
 
 let attachments = [
+{
+    title: 'to fill out using newgame method',
+    color: '#2FA44F',
+    text: '`/tic newgame @username` challenges username to newgame ',
+    mrkdwn_in: ['text']
+  }
+
+]
+
+console.log("attachments BEFORE push", attachments);
+
+attachments.push(
   {
     title: 'Tic Tac Toe Help',
     color: '#777777',
     text: '`/tic help` ... shows all available commands \n',
     mrkdwn_in: ['text']
   }
-]
-
-console.log("attachments BEFORE push", attachments);
-
-attachments.push({
-    title: 'ADDED VIA push',
-    color: '#2FA44F',
-    text: '`/tic newgame @username` challenges username to newgame ',
-    mrkdwn_in: ['text']
-  });
+  );
 
 console.log("attachments after push", attachments);
 
