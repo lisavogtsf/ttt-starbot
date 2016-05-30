@@ -30,12 +30,12 @@ let attachments = [
   }
 ]
 
-// attachments.shift(  {
-//     title: 'ADDED VIA SHIFT',
-//     color: '#2FA44F',
-//     text: '`/tic newgame @username` challenges username to newgame ',
-//     mrkdwn_in: ['text']
-//   });
+attachments.shift({
+    title: 'ADDED VIA SHIFT',
+    color: '#2FA44F',
+    text: '`/tic newgame @username` challenges username to newgame ',
+    mrkdwn_in: ['text']
+  });
 
 console.log("attachments", attachments);
 
