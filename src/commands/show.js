@@ -20,7 +20,7 @@ let attachments = [
   {
     title: 'Tic Tac Toe Help',
     color: '#777777',
-    text: '`/tic help` ... you\'re lookin at it! \n',
+    text: '`/tic help` ... shows all available commands \n',
     mrkdwn_in: ['text']
   }
 ]

@@ -12,15 +12,17 @@ const msgDefaults = {
 
 let attachments = [
   {
-    title: 'One day you will be able to play a game of tictactoe',
-    color: '#2FA44F',
-    text: '`/tic newgame @username` challenges username to newgame \n`/tic show` shows the state of the game \n`/tic square 7` makes a move in square 7 (if it\'s your turn) \n`/tic quit` ends the game',
+    title: 'You have now quit your game of tictactoe',
+    color: 'danger',
+    text: '`/tic quit` ends the game',
+    footer: "Thank you for playing Tic Tac Toe",
+    footer_icon: "https://platform.slack-edge.com/img/default_application_icon.png",
     mrkdwn_in: ['text']
   },
   {
     title: 'Tic Tac Toe Help',
     color: '#777777',
-    text: '`/tic help` ... you\'re lookin at it! \n',
+    text: '`/tic help` ... shows all available commands \n',
     mrkdwn_in: ['text']
   }
 ]
