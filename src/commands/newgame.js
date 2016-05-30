@@ -18,7 +18,7 @@ const handler = (payload, res) => {
 
   // check if there is a valid username being challenged, are they in this same channel? create error message
 
-  // 
+  // if all ok, create a newgame, pass in username/ids?
 
 
 let attachments = [
@@ -30,12 +30,14 @@ let attachments = [
   }
 ]
 
-attachments.shift(  {
-    title: 'ADDED VIA SHIFT',
-    color: '#2FA44F',
-    text: '`/tic newgame @username` challenges username to newgame ',
-    mrkdwn_in: ['text']
-  });
+// attachments.shift(  {
+//     title: 'ADDED VIA SHIFT',
+//     color: '#2FA44F',
+//     text: '`/tic newgame @username` challenges username to newgame ',
+//     mrkdwn_in: ['text']
+//   });
+
+console.log("attachments", attachments);
 
   let msg = _.defaults({
     channel: payload.channel_name,
