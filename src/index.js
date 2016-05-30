@@ -1,41 +1,53 @@
 
 'use strict'
 
-const express = require('express')
-const proxy = require('express-http-proxy')
-const bodyParser = require('body-parser')
-const _ = require('lodash')
-const config = require('./config')
-const commands = require('./commands')
-const helpCommand = require('./commands/help')
+// re-ES5-ing code
 
-let bot = require('./bot')
+var express = require('express'); 
+var proxy = require('express-http-proxy');
+var bodyParser = require('body-parser');
+var _ = require('lodash');
+var config = require('./config');
+var commands = require('./commands');
+var helpCommand = require('./commands/help');
 
-let app = express()
+var bot = require('./bot');
 
+var app = express();
+
+// proxy troubleshooting
 if (config('PROXY_URI')) {
   app.use(proxy(config('PROXY_URI'), {
-    forwardPath: (req, res) => { return require('url').parse(req.url).path }
-  }))
+    forwardPath: function (req, res) { 
+      return require('url').parse(req.url).path; 
+    }
+  }));
 }
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => { res.send('\n  ¯\\_(ツ)_/¯ 👋 🌍 \n') })
+app.get('/', (req, res) => { 
+
+  res.send('\n  ¯\\_(ツ)_/¯ 👋 🌍 \n') 
+
+});
+
+
+
 
 app.post('/commands/tictactoe', (req, res) => {
-  let payload = req.body
+  var payload = req.body
 
   if (!payload || payload.token !== config('STARBOT_COMMAND_TOKEN')) {
-    let err = '✋  My Star—what? An invalid slash token was provided\n' +
+    var err = '✋  My Star—what? An invalid slash token was provided\n' +
               '   Is your Slack slash token correctly configured?'
     console.log(err)
     res.status(401).end(err)
     return
   }
 
-  let cmd = _.reduce(commands, (accumulator, command) => {
+  var cmd = _.reduce(commands, (accumulator, command) => {
     return payload.text.match(command.pattern) ? command : accumulator
   }, helpCommand)
 
