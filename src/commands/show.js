@@ -24,6 +24,14 @@ let attachments = [
     mrkdwn_in: ['text']
   },
   {
+    text: 'Player 1: <name> ❌',
+    mrkdwn_in: ['text']
+  },
+  {
+    text: 'Player 2: <name> ⭕',
+    mrkdwn_in: ['text']
+  },
+  {
     title: 'Tic Tac Toe Help',
     color: '#777777',
     text: '`/tic help` ... shows all available commands \n',
