@@ -43,6 +43,9 @@ const handler = (payload, res) => {
     color: '#777777',
     text: '`/tic help` ... shows all available commands \n',
     mrkdwn_in: ['text']
+  },
+  {
+    text: payload.text
   }
 ]
   }, msgDefaults)
