@@ -23,18 +23,19 @@ const handler = (payload, res) => {
 
 let attachments = [
   {
-    title: 'One day you will be able to play a game of tictactoe',
-    color: '#2FA44F',
-    text: '`/tic newgame @username` challenges username to newgame ',
-    mrkdwn_in: ['text']
-  },
-  {
     title: 'Tic Tac Toe Help',
     color: '#777777',
     text: '`/tic help` ... shows all available commands \n',
     mrkdwn_in: ['text']
   }
 ]
+
+attachments.shift(  {
+    title: 'ADDED VIA SHIFT',
+    color: '#2FA44F',
+    text: '`/tic newgame @username` challenges username to newgame ',
+    mrkdwn_in: ['text']
+  });
 
   let msg = _.defaults({
     channel: payload.channel_name,
