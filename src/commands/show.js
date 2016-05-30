@@ -13,7 +13,6 @@ const msgDefaults = {
 let attachments = [
   {
     title: 'One day you will be able to play a game of tictactoe',
-      ,
     text: '`/tic show` shows the state of the game ❌ ⭕ ✖️ ',
     mrkdwn_in: ['text']
   },
