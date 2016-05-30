@@ -30,16 +30,16 @@ let attachments = [
   }
 ]
 
-console.log("attachments BEFORE shift", attachments);
+console.log("attachments BEFORE push", attachments);
 
-attachments.shift({
-    title: 'ADDED VIA SHIFT',
+attachments.push({
+    title: 'ADDED VIA push',
     color: '#2FA44F',
     text: '`/tic newgame @username` challenges username to newgame ',
     mrkdwn_in: ['text']
   });
 
-console.log("attachments after shift", attachments);
+console.log("attachments after push", attachments);
 
   let msg = _.defaults({
     channel: payload.channel_name,
