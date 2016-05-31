@@ -11,25 +11,32 @@ var config = require('./config');
 var commands = require('./commands');
 var helpCommand = require('./commands/help');
 
+var Game = require('./tic-tac-toe/game');
+
 var bot = require('./bot');
 
 var app = express();
 
-// proxy troubleshooting
-if (config('PROXY_URI')) {
-  app.use(proxy(config('PROXY_URI'), {
-    forwardPath: function (req, res) { 
-      return require('url').parse(req.url).path; 
-    }
-  }));
-}
+// // proxy troubleshooting
+// if (config('PROXY_URI')) {
+//   console.log(config('PROXY_URI'));
+//   app.use(proxy(config('PROXY_URI'), {
+//     forwardPath: function (req, res) { 
+//       return require('url').parse(req.url).path; 
+//     }
+//   }));
+// }
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+// need to be able to parse body of request object
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => { 
+app.get('/', function (req, res) { 
 
-  res.send('\n  ¯\\_(ツ)_/¯ 👋 🌍 \n') 
+  console.log("trying to access Game object, require('./tic-tac-toe/game').stuff:");
+  console.log(Game.stuff);
+
+  res.send('\n  ¯\\_(ツ)_/¯ 👋 🌍 \n');
 
 });
 
